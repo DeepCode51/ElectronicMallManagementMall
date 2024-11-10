@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 加载类路径下db.properties -->
+	<properties resource="db.properties"></properties>
+	<typeAliases>
+		<package name="com.entity" />
+	</typeAliases>
+	
+	<plugins>
+    <plugin interceptor="com.github.pagehelper.PageInterceptor">
+    </plugin>
+    </plugins>
+    
+<!-- 映射文件 -->
+	<mappers>
+		<mapper resource="com/mapping/User.xml" />
+		<mapper resource="com/mapping/Category.xml" />
+		<mapper resource="com/mapping/Product.xml" />
+		<mapper resource="com/mapping/Picture.xml" />
+		<mapper resource="com/mapping/News.xml" />
+		<mapper resource="com/mapping/Member.xml" />
+		<mapper resource="com/mapping/Comment.xml" />
+		<mapper resource="com/mapping/Message.xml" />
+		<mapper resource="com/mapping/Cart.xml" />
+		<mapper resource="com/mapping/Inventory.xml" />
+		<mapper resource="com/mapping/Ordermsg.xml" />
+		<mapper resource="com/mapping/Ordermsgdetails.xml" />
+		<mapper resource="com/mapping/Ticket.xml" />
+		<mapper resource="com/mapping/Fav.xml" />
+		<mapper resource="com/mapping/Address.xml" />
+	</mappers>
+	
+</configuration>

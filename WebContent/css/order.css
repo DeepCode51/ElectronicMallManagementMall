@@ -1,0 +1,110 @@
+/*内容*/
+/*我的订单*/
+.my_order {height: 68px;border: 1px solid #dddddd;margin-top: 25px;background: #f7f7f7;}
+.my_order h1 {font-size: 20px;float: left;line-height: 68px;margin-left: 20px;font-weight: normal}
+.my_order .place {float: right;position: relative;margin-right: 30px;}
+.my_order .place ul li {float: left;text-align: center;width: 100px;margin-top: 10px;position: relative;z-index: 100}
+.my_order .place ul li span {display: block;width: 23px;height: 23px;line-height: 23px;text-align: center;background: #7f7f7f;color: #ffffff;border-radius: 23px;font-size: 16px;margin-left: 38.5px;}
+.my_order .place ul li p {font-size: 15px;margin-top: 5px;}
+.my_order .place ul .current span {background: #ff5500;}
+.my_order .place ul .current p {color: #ff5500}
+.my_order .place .heng {height: 4px;background: #dddddd;position: absolute;width: 90px;left: 150px;top: 20px;}
+.my_order .place .a_heng {height: 4px;background: #ff5500;position: absolute;width: 90px;left: 60px;top: 20px;}
+
+/*收货地址*/
+.address {margin-top: 15px;}
+.address .roo {height: 35px;font-size: 18px;font-weight: normal;line-height: 35px;padding-left: 20px;position: relative;}
+.address .roo span {width: 4px;height: 100%;background: #ff5500;display: block;position: absolute;left: 0;top: 0;border-radius: 5px;}
+
+.address .b_address {margin-top: 12px;}
+.address .b_address ul li {width: 313px;border: 1px solid #ff5500;border-radius: 10px;background: url(../image/bb1.png) repeat-x;padding-top: 11px;position: relative;margin-bottom: 10px;float: left;margin-right: 40px;}
+.address .b_address ul li h1 {height: 45px;border-bottom: 1px dashed #ebebeb;width: 293px;margin: 0 10px;font-size: 18px;line-height: 45px;}
+.address .b_address ul li h1 span {font-weight: normal;font-size: 16px;margin-left: 10px;}
+.address .b_address ul li p {padding: 10px 0;border-bottom: 1px solid #ebebeb;width: 293px;margin: 0 10px;}
+.address .b_address ul li .operate {height: 50px;position: relative}
+.address .b_address ul li .operate a {width: 58px;height: 28px;border: 1px solid #ff5500;display: block;line-height: 28px;text-align: center;border-radius: 20px;color: #ff5500;}
+.address .b_address ul li .operate .edit {position: absolute;bottom: 8px;left: 110px;}
+.address .b_address ul li .operate .del {position: absolute;bottom: 8px;left: 195px;}
+.address .b_address ul .current .check {width: 55px;height: 52px;background: url(../image/xuanzhong.png);position: absolute;right: -1px;bottom:-1px;}
+
+.address .b_address .add_address {width: 313px;height: 182px;border: 1px solid #f0f0f0;border-radius: 10px;background: url(../image/bb2.png) repeat-x;padding-top: 11px;position: relative;margin-bottom: 10px;float: left;margin-right: 40px;}
+.address .b_address .add_address a {color: #ff5500;display: block;position: absolute;width: 60px;height: 15px;background: url(../image/add.jpg) no-repeat;padding-top: 25px;background-position: 50% 10%;text-align: center;top: 50%;left: 50%;margin-left: -30px;margin-top: -7.5px;font-size: 14px;}
+
+
+/*订单信息*/
+.order_details {margin-top: 20px;}
+.order_details .roo {height: 35px;font-size: 18px;font-weight: normal;line-height: 35px;padding-left: 20px;position: relative;}
+.order_details .roo span {width: 4px;height: 100%;background: #ff5500;display: block;position: absolute;left: 0;top: 0;border-radius: 5px;}
+
+.order_details .tt {margin-top: 10px;border: 1px solid #eeeeee;padding-left: 16px;}
+.order_details .tt table {width: 100%;}
+.order_details .tt table th {font-size: 14px;}
+.order_details .tt table tr td {height: 95px;text-align: center;}
+.order_details .tt table tr td .pic {width: 58px;height: 58px;border: 1px solid #eeeeee;float: left;}
+.order_details .tt table tr td .pic img {width: 58px;height: 58px;}
+.order_details .tt table tr td p {margin-left: 70px;}
+.order_details .tt table tr td .one {margin-top: 5px;text-align: left;}
+.order_details .tt table tr td .two {margin-top: 15px;color: #888888;text-align: left;}
+.order_details .tt table tr td .e {font-size: 14px;font-weight: bold;}
+.order_details .tt table tr td .u {font-size: 14px;font-weight: bold;color: #ff5500}
+
+
+/*优惠卷*/
+.coupon {margin-top: 20px;position: relative}
+.coupon .roo {height: 35px;font-size: 18px;font-weight: normal;line-height: 35px;padding-left: 20px;position: relative;}
+.coupon .roo span {width: 4px;height: 100%;background: #ff5500;display: block;position: absolute;left: 0;top: 0;border-radius: 5px;}
+.coupon .rr {margin-top: 10px;border: 1px solid #eeeeee;padding-left: 15px;padding-bottom: 20px;}
+.coupon .rr p {height: 38px;line-height: 38px;border-bottom: 1px dashed #a0a0a0;font-size: 15px;}
+.coupon .rr p a {color: #ff5500;font-size: 14px;}
+.coupon .rr p font {color: #ff5500;font-size: 15px;}
+.coupon .rr p span {margin-left: 20px;font-size: 15px;}
+.coupon .rr .ff {padding-top: 20px;border-bottom: 1px dashed #a0a0a0;}
+.coupon .rr .ff ul li {padding-left: 20px;margin-bottom: 20px;}
+.coupon .rr .ff ul li .check {float: left;}
+.coupon .rr .ff ul li .check img {cursor: pointer}
+.coupon .rr .ff ul li span {font-size: 15px;margin-left: 40px;}
+
+.coupon .kk {width: 270px;float: right;}
+.coupon .kk table {width: 100%;}
+.coupon .kk table tr td {font-size: 14px;height: 30px;}
+.coupon .kk table tr td:first-child {text-align: right;width: 65%;}
+
+.coupon .kk .money {margin: 30px 0 30px 80px;font-size: 15px;}
+.coupon .kk .money span {color: #ff5500;font-size: 15px;}
+.coupon .kk .money span font {font-size: 25px;font-weight: bold;}
+
+.coupon .ll {margin-top: 10px;border: 1px solid #eeeeee;padding: 20px;margin-bottom: 40px;}
+.coupon .ll .bb {background: #eeeeee;color: #999999;padding: 15px 20px 10px 20px;}
+.coupon .ll .bb h1 {text-align: center;font-size: 15px;}
+.coupon .ll .bb p {font-size: 14px;margin-top: 5px;}
+
+.coupon .ss {width: 700px;margin-top: 20px;float: left;}
+.coupon .ss p {padding-left: 40px;font-size: 14px;height: 28px;line-height: 28px;}
+.coupon .ss .bg {margin-bottom: 10px;background: url(../image/dingwei.jpg) no-repeat;background-position: 2% 0;}
+
+.coupon .gg {height: 40px;float: left;line-height: 40px;margin-top: 30px;}
+.coupon .gg p {font-size: 15px;}
+.coupon .gg p span {color: #ff5500}
+.coupon .gg p font {font-size: 25px;font-weight: bold;}
+.coupon input {width: 147px;height: 40px;border: none;background: #ff5500;color: #ffffff;font-size: 16px;float: left;margin-top: 30px;margin-left: 10px;cursor: pointer}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

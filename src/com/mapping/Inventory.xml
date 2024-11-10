@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.InventoryDAO">
+    <resultMap type="com.entity.Inventory" id="BaseResultMap">
+      <id column="id" property="id" jdbcType="INTEGER"/>
+      <result column="productid" property="productid" jdbcType="VARCHAR"/>
+      <result column="type" property="type" jdbcType="VARCHAR"/>
+      <result column="num" property="num" jdbcType="INTEGER"/>
+      <result column="savetime" property="savetime" jdbcType="VARCHAR"/>
+      <result column="delstatus" property="delstatus" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    
+    <insert id="add" parameterType="Inventory">
+      insert into inventory values(null,#{productid},#{type},#{num},#{savetime},#{delstatus})
+    </insert>
+    
+    <select id="selectAll" parameterType="HashMap" resultMap="BaseResultMap">
+      select * from inventory where 1=1
+      <if test="productid!=null and productid!=''">
+        and productid=#{productid}
+      </if>
+      <if test="type!=null and type!=''">
+        and type=#{type}
+      </if>
+      <if test="savetime!=null and savetime!=''">
+        and savetime=#{savetime}
+      </if>
+      <if test="delstatus!=null and delstatus!=''">
+        and delstatus=#{delstatus}
+      </if>
+      <if test="key!=null and key!=''">
+        and productid in (select id from product where productname like "%"#{key}"%")
+      </if>
+      order by id desc
+    </select>
+    
+    <select id="findById" parameterType="Int" resultType="inventory">
+      select * from inventory where id=#{id}
+    </select>
+    
+    <update id="update" parameterType="inventory">
+      update inventory set delstatus=1 where id=#{id}
+    </update>
+	
+</mapper>
+

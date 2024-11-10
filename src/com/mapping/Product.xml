@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ProductDAO">
+    
+    <resultMap type="com.entity.Product" id="BaseResultMap">
+      <id column="id" property="id" jdbcType="INTEGER"/>
+      <result column="productno" property="productno" jdbcType="VARCHAR"/>
+      <result column="productname" property="productname" jdbcType="VARCHAR"/>
+      <result column="filename" property="filename" jdbcType="VARCHAR"/>
+      <result column="price" property="price" jdbcType="DOUBLE"/>
+      <result column="tprice" property="tprice" jdbcType="DOUBLE"/>
+      <result column="fid" property="fid" jdbcType="VARCHAR"/>
+      <result column="sid" property="sid" jdbcType="VARCHAR"/>
+      <result column="content" property="content" jdbcType="VARCHAR"/>
+      <result column="delstatus" property="delstatus" jdbcType="VARCHAR"/>
+      <result column="issj" property="issj" jdbcType="VARCHAR"/>
+      <result column="istj" property="istj" jdbcType="VARCHAR"/>
+      <result column="saver" property="saver" jdbcType="VARCHAR"/>
+      <result column="productid" property="productid" jdbcType="VARCHAR"/>
+      <result column="leibie" property="leibie" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <select id="selectAll" parameterType="hashmap"  resultMap="BaseResultMap">
+      select * from product where 1=1 and delstatus=0
+        <if test="key!=null and key!=''">
+          and productname like "%"#{key}"%"
+        </if>
+        <if test="istj!=null and istj!=''">
+          and istj=#{istj}
+        </if>
+        <if test="issj!=null and issj!=''">
+          and issj=#{issj}
+        </if>
+        <if test="fid!=null and fid!=''">
+          and fid=#{fid}
+        </if>
+        <if test="sid!=null and sid!=''">
+          and sid=#{sid}
+        </if>
+        <if test="saver!=null and saver!=''">
+          and saver=#{saver}
+        </if>
+        <if test="productid!=null and productid!=''">
+          and productid=#{productid}
+        </if>
+        <if test="leibie!=null and leibie!=''">
+          and leibie=#{leibie}
+        </if>
+        <choose>
+        <when test="ph!=null and ph!=''">
+         order  by price desc
+        </when>
+        <otherwise>
+        order by id desc
+        </otherwise>
+        </choose>
+    </select>
+    
+    <insert id="add" parameterType="Product">
+      insert into product values(null,#{productno},#{productname},#{filename},#{price},#{tprice},#{fid},#{sid},#{content},#{delstatus},#{issj},#{istj},#{saver},#{productid},#{leibie})
+    </insert>
+    
+    <select id="findById" parameterType="int" resultType="Product">
+      select * from product where id=#{id}
+    </select>
+    
+    <update id="update" parameterType="Product">
+      update product
+      <set>
+        <if test="productname!=null and productname!=''">
+         productname=#{productname},
+        </if>
+        <if test="filename!=null and filename!=''">
+         filename=#{filename},
+        </if>
+        <if test="price!='' and price &gt; 0">
+         price=#{price},
+        </if>
+        <if test="fid!=null and fid!=''">
+         fid=#{fid},
+        </if>
+        <if test="sid!=null and sid!=''">
+         sid=#{sid},
+        </if>
+        <if test="content!=null and content!=''">
+         content=#{content},
+        </if>
+        <if test="issj!=null and issj!=''">
+         issj=#{issj},
+        </if>
+        <if test="istj!=null and istj!=''">
+         istj=#{istj},
+        </if>
+      </set>
+      where id=#{id}
+    </update>
+    
+    <update id="updateTprice" parameterType="Product">
+      update product set tprice=#{tprice} where id=#{id}
+    </update>
+    
+    <update id="delete" parameterType="int">
+      update product set delstatus=1 where id=#{id}
+    </update>
+    
+    
+    <select id="selectCorrelation"  resultMap="BaseResultMap">
+      select * from product where id!=#{0} and delstatus=0 and categoryid=#{1}
+    </select>
+    
+    <select id="selectCategory"  resultMap="BaseResultMap">
+      select * from product where delstatus=0 and categoryid=#{0} order by id desc
+    </select>
+    
+    <select id="selectProductname" parameterType="String"  resultMap="BaseResultMap">
+      select * from product where delstatus=0 and productname like "%"#{productname}"%"
+    </select>
+    
+    <select id="selectProductAll" parameterType="HashMap" resultMap="BaseResultMap">
+    select * from product where 1=1 and delstatus=0
+    <if test="leibie!=null and leibie!=''">
+     and leibie=#{leibie}
+    </if>
+    <if test="key!=null">
+    and <![CDATA[ price >=#{key} ]]>
+    </if>
+    <if test="key!=null">
+    and <![CDATA[ price <=#{key1} ]]>
+    </if>
+     order by id desc
+    </select>
+    
+    
+    
+	
+</mapper>
+

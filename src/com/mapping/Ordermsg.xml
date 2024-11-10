@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.OrdermsgDAO">
+    <resultMap type="com.entity.Ordermsg" id="BaseResultMap">
+      <id column="id" property="id" jdbcType="INTEGER"/>
+      <result column="ddno" property="ddno" jdbcType="VARCHAR"/>
+      <result column="memberid" property="memberid" jdbcType="VARCHAR"/>
+      <result column="total" property="total" jdbcType="VARCHAR"/>
+      <result column="fkstatus" property="fkstatus" jdbcType="VARCHAR"/>
+      <result column="addrid" property="addrid" jdbcType="VARCHAR"/>
+      <result column="savetime" property="savetime" jdbcType="VARCHAR"/>
+      <result column="delstatus" property="delstatus" jdbcType="VARCHAR"/>
+      <result column="zffs" property="zffs" jdbcType="VARCHAR"/>
+      <result column="goodstype" property="goodstype" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <insert id="add" parameterType="Ordermsg">
+      insert into ordermsg values (null,#{ddno},#{memberid},#{total},#{fkstatus},#{addrid},#{savetime},#{delstatus},#{zffs},#{goodstype})
+    </insert>
+    
+    <select id="selectAll" parameterType="HashMap" resultMap="BaseResultMap">
+      select * from ordermsg where 1=1 
+      <if test="memberid!=null and memberid!=''">
+      and memberid=#{memberid}
+      </if>
+      <if test="ddno!=null and ddno!=''">
+      and ddno=#{ddno}
+      </if>
+      <if test="fkstatus!=null and fkstatus!=''">
+      and fkstatus!=#{fkstatus}
+      </if>
+      <if test="status!=null and status!=''">
+      and fkstatus=#{status}
+      </if>
+       <if test="delstatus!=null and delstatus!=''">
+      and delstatus=#{delstatus}
+      </if>
+      <if test="goodstype!=null and goodstype!=''">
+      and goodstype=#{goodstype}
+      </if>
+      
+      <if test="key!=null and key!=''">
+      and date_format(savetime,'%Y-%m-%d')=#{key}
+      </if>
+      order by id desc
+    </select>
+    
+    <update id="update" parameterType="Ordermsg">
+      update ordermsg 
+      <set>
+        <if test="fkstatus!=null and fkstatus!=''">
+          fkstatus=#{fkstatus},
+        </if>
+        
+        
+        <if test="zffs!=null and zffs!=''">
+          zffs=#{zffs},
+        </if>
+        
+        <if test="addrid!=null and addrid!=''">
+          addrid=#{addrid},
+        </if>
+        
+        <if test="delstatus!=null and delstatus!=''">
+          delstatus=#{delstatus}
+        </if>
+      </set>
+      where id=#{id}
+    </update>
+    
+    <select id="findById" parameterType="Int" resultType="Ordermsg">
+      select * from ordermsg where id=#{id}
+    </select>
+    
+    <select id="selectSaleMoney" parameterType="HashMap" resultMap="BaseResultMap">
+      select DISTINCT(DATE_FORMAT(savetime,'%Y-%c-%d')) as savetime, sum(total) as total  from ordermsg where 1=1
+       <if test="fkstatus!=null and fkstatus!=''">
+      and fkstatus=#{fkstatus}
+      </if>
+      <if test="goodstype!=null and goodstype!=''">
+      and goodstype=#{goodstype}
+      </if>
+      GROUP BY DATE_FORMAT(savetime,'%Y-%c-%d') order by DATE_FORMAT(savetime,'%Y-%c-%d') 
+    </select>
+    
+    
+    
+    <select id="selectSale" parameterType="HashMap" resultMap="BaseResultMap">
+      select * from ordermsg where 1=1
+      <if test="fkstatus!=null and fkstatus!=''">
+      and fkstatus=#{fkstatus}
+      </if>
+      order by id desc
+    </select>
+    
+    
+    
+    
+   
+</mapper>
+

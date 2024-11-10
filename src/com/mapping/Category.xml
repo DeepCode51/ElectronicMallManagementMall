@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.CategoryDAO">
+    <resultMap type="com.entity.Category" id="BaseResultMap">
+      <id column="id" property="id" jdbcType="INTEGER"/>
+      <result column="name" property="name" jdbcType="VARCHAR"/>
+      <result column="fatherid" property="fatherid" jdbcType="VARCHAR"/>
+      <result column="delstatus" property="delstatus" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <select id="findAll" parameterType="HashMap" resultMap="BaseResultMap">
+      select * from category where 1=1 and delstatus=0
+      <if test="fatherid!=null and fatherid!=''">
+        and fatherid=#{fatherid}
+      </if>
+      order by id desc
+    </select>
+    
+    <select id="selectAll" resultMap="BaseResultMap">
+      select * from category where 1=1 and delstatus=0 and fatherid=0
+    </select>
+    
+    <insert id="add" parameterType="Category">
+      insert into category values(null,#{name},#{fatherid},0)
+    </insert>
+    
+    <select id="findById" parameterType="int" resultType="Category">
+      select * from category where id=#{id}
+    </select>
+    
+    <update id="update" parameterType="Category">
+      update category set name=#{name} where id=#{id}
+    </update>
+    
+    <update id="delete" parameterType="int">
+      update category set delstatus=1 where id=#{id}
+    </update>
+    
+    <select id="search" parameterType="String" resultMap="BaseResultMap">
+      select * from category where delstatus=0 and name like "%"#{name}"%"
+    </select>
+    
+    <select id="selectFcategory" parameterType="String" resultMap="BaseResultMap">
+      select * from category where delstatus=0 and fatherid=0
+      <if test="key!=null and key!=''">
+        and name like "%"#{key}"%"
+      </if>
+      order by id desc
+    </select>
+    
+    <select id="selectScategory" parameterType="int" resultMap="BaseResultMap">
+      select * from category where delstatus=0 and fatherid=#{fatherid}
+    </select>
+    
+    
+    
+	
+</mapper>
+

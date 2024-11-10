@@ -1,0 +1,99 @@
+/*内容*/
+.middle {margin-top: 20px;overflow:hidden;}
+/*左边*/
+.middle .fl {width: 200px;background: #ebebeb;padding-top: 17px;margin-bottom: -9999px;
+    padding-bottom: 10049px;}
+.middle .fl h1 {padding-bottom: 10px;border-bottom: 1px dashed #9e9e9e;font-size: 16px;margin-bottom: 10px;}
+.middle .fl ul li {height: 36px;line-height: 36px;padding-left: 22px;}
+.middle .fl ul li a {font-size: 14px;}
+
+.middle .fl ul li:hover {background: #ff9900;background-image: url(../image/hong.jpg);background-repeat: no-repeat;}
+.middle .fl ul li:hover a {color: #ffffff;}
+
+.middle .fl ul .current {background: #ff9900;background-image: url(../image/hong.jpg);background-repeat: no-repeat;}
+.middle .fl ul .current a {color: #ffffff;}
+
+
+/*右边*/
+.middle .fr {width: 840px;}
+/*兑换码*/
+.middle .fr .m_r_t {height: 42px;background: #f7f7f7;padding: 40px 0 40px 140px;font-size: 20px;}
+.middle .fr .m_r_t .yanzhengma {height: 38px;width: 270px;border: 1px solid #eeeeee;padding-left: 20px;font-size: 16px;}
+.middle .fr .m_r_t .duihuan {width: 120px;height: 40px;color: #ffffff;border: none;background: #ff5500;font-size: 16px;cursor: pointer;margin-left: 10px;}
+/*优惠卷*/
+.middle .fr .m_r_m {margin-top: 30px;}
+.middle .fr .m_r_m .gg {border-bottom: 1px solid #cccccc;position: relative}
+.middle .fr .m_r_m .gg ul li {padding: 0 25px 20px 25px;float: left;margin-bottom: -1px;}
+.middle .fr .m_r_m .gg ul li a {font-size: 14px;font-weight: bold;text-decoration: none;}
+
+.middle .fr .m_r_m .gg ul li:hover {border-bottom: 2px solid #ff5500;}
+.middle .fr .m_r_m .gg ul li:hover a {color: #ff5500}
+
+.middle .fr .m_r_m .gg ul .current {border-bottom: 2px solid #ff5500;}
+.middle .fr .m_r_m .gg ul .current a {color: #ff5500}
+
+/*优惠卷列表*/
+.middle .fr .m_r_m .y_list {margin-top: 20px;}
+.middle .fr .m_r_m .y_list ul li {width: 245px;text-align: center;float: left;margin: 0 15px 20px 15px;}
+.middle .fr .m_r_m .y_list ul li .jj {background: #ff5500;height: 155px;background-image: url(../image/y1.jpg);width: 100%;background-position: 0 100%;background-repeat: repeat-x;position: relative;color: #ffffff;}
+.middle .fr .m_r_m .y_list ul li .jj .banyuan{width: 47px;height: 16px;display: block;background: url(../image/banyuan.jpg) no-repeat;position: absolute;left: 50%;margin-left: -23px;}
+.middle .fr .m_r_m .y_list ul li .jj .guoqi {width: 65px;height: 65px;background: url(../image/guoqi.jpg) no-repeat;display: block;position: absolute}
+.middle .fr .m_r_m .y_list ul li .jj .one {padding-top: 50px;font-size: 30px;font-weight: bold;}
+
+.middle .fr .m_r_m .y_list ul li .kk {height: 135px;width: 100%;background: #faf9f9;text-align: left}
+.middle .fr .m_r_m .y_list ul li .kk p {padding-left: 10px;padding-top: 15px;}
+
+/*优惠卷说明*/
+.details {margin-top: 30px;}
+.details h1 {font-size: 16px;padding-bottom: 12px;border-bottom: 1px solid #dddddd;}
+.details p {line-height: 20px;padding-left: 20px;background: url(../image/dian.jpg) no-repeat;background-position: 1% 50%;}
+
+
+/*热销*/
+.hot {margin-top: 90px;margin-bottom: 40px;}
+.hot .title {font-size: 16px;font-weight: bold;padding-bottom: 10px;border-bottom: 2px solid #000000}
+.hot .content {padding-top: 14px;}
+.hot .content ul li {padding: 0 20px 10px 20px;width: 175px;border-right: 1px dashed #aaaaaa;float: left;}
+.hot .content ul li:last-child {border-right: 0;}
+.hot .content ul li .pic {width: 166px;height: 128px;overflow: hidden;}
+.hot .content ul li .pic img {width: 166px;}
+.hot .content ul li .price {font-size: 15px;color: #ff5500;font-weight: bold;margin: 10px 0;}
+.hot .content ul li .goumai {width: 110px;height: 35px;border: 1px solid #ff5500;display: block;line-height: 35px;text-align: center;font-size: 16px;color: #ff5500;border-radius: 20px;margin-left: 30px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

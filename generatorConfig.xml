@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<classPathEntry    location="C:\Users\Administrator\workspace\onlineshopssm\WebContent\WEB-INF\lib\mysql-connector-java.jar"/>
+
+
+  <context id="context1">
+  
+  
+     <commentGenerator>
+         <property name="suppressDate" value="true"/>
+         <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+         <property name="suppressAllComments" value="true"/>
+     </commentGenerator>
+     
+
+     
+    <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/onlineshopssm_db?characterEncoding=utf-8" driverClass="com.mysql.jdbc.Driver" password="123456" userId="root" />
+    
+    
+    
+    <javaModelGenerator targetPackage="com.entity" targetProject="onlineshopssm/src">
+    	<property name="enableSubPackages" value="true"/>    
+    	<property name="trimStrings" value="true"/>
+    </javaModelGenerator>
+    
+    <!--对应的mapper.xml文件  -->    
+     <sqlMapGenerator targetPackage="com.mapping" targetProject="onlineshopssm/src">    
+         <property name="enableSubPackages" value="true"/>   
+         <property name="trimStrings" value="true"/> 
+     </sqlMapGenerator>    
+    
+    <!-- 生成DAO的包名和位置-->
+     <javaClientGenerator type="XMLMAPPER" targetPackage="com.dao"  targetProject="onlineshopssm/src">    
+            <property name="enableSubPackages" value="true"/>  
+            <property name="trimStrings" value="true"/>  
+     </javaClientGenerator>   
+     
+     
+    
+    <table tableName="Supplier" domainObjectName="Supplier" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+   </context>
+  
+  
+  
+</generatorConfiguration>

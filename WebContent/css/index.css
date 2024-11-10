@@ -1,0 +1,91 @@
+/*轮播图*/
+.index_banner{float:left;position:relative;width:100%;height:452px;overflow:hidden;margin-top: -7px;}
+.index_banner ul li{position:absolute;float:left;width:100%;min-width:1000px;height:485px;text-align:center;overflow:hidden;}
+.index_banner ul li a{display:block;height:100%;}
+.index_banner .btnBg{position:absolute;width:100%;height:17px;left:0;bottom:10px;}
+.index_banner .btn{margin:0 auto;width:1000px;height:17px;text-align:center;}
+
+#focus ul{position:absolute;float:left;width:100%;}
+#focus .btn span{display:inline-block;width:10px;height:10px;font-size:0;margin-left:5px;cursor:pointer;background: #ffffff;border-radius: 10px;}
+#focus .btn span.on{background: #ff9900}
+#focus .preNext{width:45px;height:100px;margin-top:-50px;cursor:pointer;position:absolute;top:50%;}
+#focus .pre{left:20%;background:url(../image/prev.png) no-repeat 0 0;}
+#focus .next{right:20%;background:url(../image/next.png) no-repeat 0 0;}
+
+/*中间部分*/
+.middle {padding: 20px 0;}
+.middle .fl ul li {float: left;width: 115px;text-align: center;margin-right: 30px;}
+.middle .fl ul li p {font-size: 16px;margin-top: 10px;}
+
+.middle .fr {width: 440px;height: 75px;background: #f9e7d5;padding: 20px 0 20px 20px;}
+.middle .fr p {height: 40px;font-size: 16px;padding-left: 40px;line-height: 40px;}
+.middle .fr .one {background: url(../image/tubiao.png) no-repeat;background-position: 0 50%;}
+.middle .fr .one a {position: relative;width: 21px;height: 26px;margin-right: 20px;}
+.middle .fr .one a img {margin-top:5px;position: absolute;}
+.middle .fr .one span {color: #9e9892;font-size: 16px;}
+
+.middle .fr .two {background: url(../image/tubiao1.png) no-repeat;background-position: 0 50%;}
+.middle .fr .two i {font-family: "04b_08";font-size: 22px;}
+
+/*商品介绍一大块*/
+.product {width: 100%;background: #f5f5f5;padding-bottom: 65px;}
+
+.product .up .crazy {width: 195px;height: 50px;background: #ff9a02;padding-left: 70px;line-height: 50px;font-size: 18px;color: #ffffff;background-image: url(../image/naozhong.png);background-repeat: no-repeat;background-position: 12% 50%;}
+
+.product .down {margin-top: 20px;}
+.product .down .fl {border-radius:0;border:1px solid #fff;-webkit-box-shadow:0 0 10px rgba(63, 63, 63, .5);-moz-box-shadow:0 0 10px rgba(63, 63, 63, .5);box-shadow:0 0 10px rgba(63, 63, 63, .5);background: #ffffff}
+.product .down .fl ul li {float: left;padding: 20px 10px 10px 10px;width: 345.5px;line-height: 20px;border-right: 2px solid #d9d9d9}
+.product .down .fl ul li .pic {text-align: center;height: 195px;width: 222px;overflow: hidden;margin: 0 auto;}
+.product .down .fl ul li .pic img {width: 222px;}
+.product .down .fl ul li:last-child {border-right:none;}
+.product .down .fl ul li p {margin-top: 20px;height: 40px;overflow: hidden}
+.product .down .fl ul li p a {color: #555555}
+.product .down .fl ul li div {height: 20px;line-height: 20px;}
+.product .down .fl ul li div .one {color: #ff5e21;font-size: 16px;font-weight: bold;float: left;}
+.product .down .fl ul li div .two {font-size: 12px;float: right;text-decoration: line-through;color: #888888}
+
+.product .down .fr {width: 315px;padding: 10px; border-radius:0;border:1px solid #fff;-webkit-box-shadow:0 0 10px rgba(63, 63, 63, .5);-moz-box-shadow:0 0 10px rgba(63, 63, 63, .5);box-shadow:0 0 10px rgba(63, 63, 63, .5);background: #ffffff}
+.product .down .fr .f_one {border-bottom: 1px solid #dddddd;padding-bottom: 7px;}
+.product .down .fr .f_one span {font-size: 18px;font-weight: bold}
+.product .down .fr .f_one a {float: right;margin-top: 10px;color: #999999}
+
+.product .down .fr .f_two {margin-top: 12px;}
+.product .down .fr .f_two ul li {height: 30px;overflow: hidden;line-height: 30px;}
+.product .down .fr .f_two ul li a {font-size: 13px;}
+.product .down .fr .f_two ul li a span{font-size: 13px;}
+
+
+/*商品介绍-----正式*/
+.floor {height: 480px;margin-top: 50px;position: relative}
+.floor .left {width: 240px;float: left;}
+.floor .left .start {padding-top: 150px;height: 50px;line-height: 30px;color: #ffffff;font-size: 24px;text-align: center;}
+.floor .left .second {padding-left: 28px;height: 270px;overflow: hidden;padding-top: 10px;}
+.floor .left .second ul li {float: left;width: 100px;height: 40px;line-height: 40px;overflow: hidden;}
+.floor .left .second ul li a {font-size: 16px;color: #ffffff}
+
+.floor .zhongbu {width: 579px;float: left;background: #ffffff;position: relative;border-right: 1px solid #eeeeee}
+.floor .zhongbu ul li {float: left;width: 289.5px;height: 215px;padding: 15px 0 10px 0;text-align: center;}
+.floor .zhongbu ul li h1 {font-size: 18px;}
+.floor .zhongbu ul li p {font-size: 14px;color: #999999}
+.floor .zhongbu ul li .pic {height: 165px;width: 180px;height: 144px;margin: 20px 0 0 60px;text-align: center;}
+.floor .zhongbu ul li .pic img {width: 180px;}
+.floor .zhongbu .heng {width: 100%;height: 1px;background: #eeeeee;position: absolute;top: 240px;left: 0;}
+.floor .zhongbu .shu {height: 100%;width: 1px;background: #eeeeee;position: absolute;top: 0;left: 290px;}
+
+.floor .right {width: 220px;float: left;background: #ffffff;padding: 12px 20px 0 20px;}
+.floor .right h1 {font-size: 18px;text-align: center;}
+.floor .right ul li {padding: 17.5px 10px;border-bottom: 1px solid #eeeeee;}
+.floor .right ul li dl dt {float: left;width: 75px;height: 75px;}
+.floor .right ul li dl dt img {width: 75px;height: 75px;}
+.floor .right ul li dl dd {float: left;width: 125px;}
+.floor .right ul li dl .xiangxi {height: 40px;line-height: 20px;margin-top: 10px;}
+.floor .right ul li dl .xiangxi a {color: #555555}
+.floor .right ul li dl .fl {color: #ff9a02}
+.floor .right ul li dl .fr {text-decoration: line-through;color:#888888}
+
+.floor .floor_one {width: 54px;height: 81px;background: url(../image/floor1.png) no-repeat;position: absolute;top: -25px;left:20px;}
+.floor .floor_two {width: 54px;height: 81px;background: url(../image/floor2.png) no-repeat;position: absolute;top: -25px;left:20px;}
+.floor .floor_three {width: 54px;height: 81px;background: url(../image/floor3.png) no-repeat;position: absolute;top: -25px;left:20px;}
+.floor .floor_four {width: 54px;height: 81px;background: url(../image/floor4.png) no-repeat;position: absolute;top: -25px;left:20px;}
+.floor .floor_five {width: 54px;height: 81px;background: url(../image/floor5.png) no-repeat;position: absolute;top: -25px;left:20px;}
+

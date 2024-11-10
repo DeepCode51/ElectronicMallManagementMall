@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.MemberDAO">
+    <resultMap type="com.entity.Member" id="BaseResultMap">
+      <id column="id" property="id" jdbcType="INTEGER"/>
+      <result column="uname" property="uname" jdbcType="VARCHAR"/>
+      <result column="upass" property="upass" jdbcType="VARCHAR"/>
+      <result column="tname" property="tname" jdbcType="VARCHAR"/>
+      <result column="tel" property="tel" jdbcType="VARCHAR"/>
+      <result column="brithtime" property="brithtime" jdbcType="VARCHAR"/>
+      <result column="savetime" property="savetime" jdbcType="VARCHAR"/>
+      <result column="money" property="money" jdbcType="DOUBLE"/>
+      <result column="xftotal" property="xftotal" jdbcType="DOUBLE"/>
+      <result column="utype" property="utype" jdbcType="VARCHAR"/>
+      <result column="delstatus" property="delstatus" jdbcType="VARCHAR"/>
+      <result column="jf" property="jf" jdbcType="INTEGER"/>
+      
+    </resultMap>
+    
+    <update id="update" parameterType="Member">
+      update member 
+      <set>
+      <if test="upass!=null and upass!=''">
+        upass=#{upass},
+      </if>
+      <if test="tname!=null and tname!=''">
+        tname=#{tname},
+      </if>
+      <if test="tel!=null and tel!=''">
+        tel=#{tel},
+      </if>
+      <if test="brithtime!=null and brithtime!=''">
+        brithtime=#{brithtime},
+      </if>
+      <if test="delstatus!=null and delstatus!=''">
+        delstatus=#{delstatus},
+      </if>
+      
+      
+      <if test="utype!=null">
+        utype=#{utype}
+      </if>
+      </set>
+      where id=#{id}
+    </update>
+    
+    <insert id="add" parameterType="Member">
+      insert into member values(null,#{uname},#{upass},#{tname},#{tel},#{brithtime},#{savetime},#{money},#{xftotal},#{utype},#{delstatus},#{jf})
+    </insert>
+    
+    
+    <select id="findById" parameterType="Int" resultType="Member">
+      select * from member where id=#{id}
+    </select>
+    
+    <select id="selectAll" parameterType="HashMap"  resultMap="BaseResultMap">
+      select * from member where 1=1 and delstatus=0
+      <if test="key!=null and key!=''">
+        and uname like "%"#{key}"%" or tname like "%"#{key}"%"
+      </if>
+      <if test="uname!=null and uname!=''">
+        and uname=#{uname}
+      </if>
+      <if test="upass!=null and upass!=''">
+        and upass=#{upass}
+      </if>
+      order by id desc
+    </select>
+    
+    <update id="updateYue" parameterType="Member">
+      update member set money=#{money} where id=#{id}
+    </update>
+    
+    <update id="updateXftotal" parameterType="Member">
+      update member set xftotal=#{xftotal} where id=#{id}
+    </update>
+    
+    <update id="updateJf" parameterType="Member">
+      update member set jf=#{jf} where id=#{id}
+    </update>
+    
+    
+    
+    
+    
+	
+</mapper>
+

@@ -1,0 +1,61 @@
+/*公共样式*/
+* {margin: 0;padding: 0;outline: 0;font-size: 12px;font-family:"微软雅黑";}
+a {text-decoration: none;color: #000000;}
+a:hover {text-decoration: underline}
+ul {list-style-type: none;}
+img {border: none;}
+
+.fl {float: left;}
+.fr {float: right;}
+.clear {clear: both}
+.wt1080 {width: 1080px;margin: 0 auto;}
+
+/*头部*/
+.top {}
+.top .logo {float: left;margin: 30px 0;}
+.top .rr {float: right}
+.top .rr  ul li {float: left;width: 130px;text-align: center;margin-top: 20px;}
+.top .rr  ul li img {width: 65px;height: 65px;}
+.top .rr  ul li p {margin-top: 10px;}
+
+/*中间*/
+.red {background: #fe0041;width: 100%;}
+.login {}
+.red .login .login_pic {width: 643px;height: 386px;padding: 33px 0;float: left;}
+
+.red .login .l_k {width: 353px;background: #ffffff;height: 337px;float: right;margin: 57px 0;padding: 0 40px;}
+.red .login .l_k .l_k_t {height: 60px;}
+.red .login .l_k .l_k_t .one {font-size: 16px;color: #ff5500;margin-top: 25px;float: left;}
+.red .login .l_k .l_k_t .two {float: right;margin-top: 30px;}
+.red .login .l_k .l_k_t .two a {color:#ff5500}
+
+/*登陆框*/
+.red .login .l_k .l_k_d {border: 1px solid #eeeeee;border-bottom: none;}
+.red .login .l_k .l_k_d input {border: none;width: 282px;height: 52px;padding-left: 68px;border-bottom: 1px solid #eeeeee;font-size: 14px;}
+.red .login .l_k .l_k_d .admin{background: url(../image/ren.jpg) no-repeat;background-position: 7% 50%;}
+.red .login .l_k .l_k_d .pass{background: url(../image/suo.jpg) no-repeat;background-position: 7% 50%;}
+
+.red .login .l_k .mem {color: #999999;height: 40px;line-height: 40px;}
+.red .login .l_k .mem span {float: left;font-size: 14px;}
+.red .login .l_k .mem a {color: #999999;float: right;font-size: 14px;}
+
+.red .login .l_k .s_login {display: block;width: 100%;background: #ff5500;border: none;color: #ffffff;font-size: 16px;height: 45px;line-height: 45px;cursor: pointer;margin-top: 20px;}
+.red .login .xie {width: 433px;height: 10px;display: block;margin-left: -40px;background: url(../image/xie.jpg) repeat-x;margin-top: 20px;}
+
+
+/*底部*/
+.foot {margin-top: 30px;text-align:center;}
+.foot ul {padding-left: 0;}
+.foot ul li {display: inline-block;padding: 0 22px;background: url(../image/shu.jpg) no-repeat;background-position: 100% 10%;}
+.foot ul li:last-child {background: none;}
+.foot ul li a {font-size: 14px;}
+
+.foot p {color: #999999;margin-top: 20px;}
+
+
+
+
+
+
+
+

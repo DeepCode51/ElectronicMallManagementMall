@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.UserDAO">
+
+    <resultMap type="com.entity.User" id="BaseResultMap">
+      <id column="id" property="id" jdbcType="INTEGER"/>
+      <result column="username" property="username" jdbcType="VARCHAR"/>
+      <result column="userpassword" property="userpassword" jdbcType="VARCHAR"/>
+      <result column="realname" property="realname" jdbcType="VARCHAR"/>
+      <result column="filename" property="filename" jdbcType="VARCHAR"/>
+      <result column="idcard" property="idcard" jdbcType="VARCHAR"/>
+      <result column="tel" property="tel" jdbcType="VARCHAR"/>
+      <result column="delstatus" property="delstatus" jdbcType="VARCHAR"/>
+      <result column="usertype" property="usertype" jdbcType="VARCHAR"/>
+      <result column="shstatus" property="shstatus" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <insert id="add">
+	  insert into user values(null,#{username},#{userpassword},#{realname},#{filename},#{idcard},#{tel},#{delstatus},#{usertype},#{shstatus})
+	</insert>
+
+	<select id="findById" resultType="User" parameterType="int">
+		select * from user where id=#{id}
+	</select>
+
+	
+	<select id="selectAll" parameterType="HashMap" resultMap="BaseResultMap">
+	  select * from user where 1=1 and delstatus=0
+	  <if test="key!=null and key!=''">
+	   and realname like "%"#{key}"%"
+	  </if>
+	  <if test="username!=null and username!=''">
+	    and username=#{username}
+	  </if>
+	  <if test="userpassword!=null and userpassword!=''">
+	    and userpassword=#{userpassword}
+	  </if>
+	  <if test="shstatus!=null and shstatus!=''">
+	    and shstatus=#{shstatus}
+	  </if>
+	  
+	  <if test="id &gt; 0">
+	    and id!=#{id}
+	  </if>
+	  order by id desc
+	</select>
+	
+	<update id="update" parameterType="User">
+	  update user 
+	  <set>
+	    <if test="userpassword!=null and userpassword!=''">
+	      userpassword=#{userpassword},
+	    </if>
+	    <if test="realname!=null and realname!=''">
+	      realname=#{realname},
+	    </if>
+	    <if test="filename!=null and filename!=''">
+	      filename=#{filename},
+	    </if>
+	    <if test="idcard!=null and idcard!=''">
+	      idcard=#{idcard},
+	    </if>
+	    <if test="tel!=null and tel!=''">
+	      tel=#{tel},
+	    </if>
+	    <if test="shstatus!=null and shstatus!=''">
+	      shstatus=#{shstatus},
+	    </if>
+	    <if test="realname!=null and realname!=''">
+	      realname=#{realname},
+	    </if>
+	    <if test="delstatus!=null and delstatus!=''">
+	      delstatus=#{delstatus}
+	    </if>
+	  </set>
+	  where id=#{id}
+	</update>
+	
+	
+	
+	
+</mapper>
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.OrdermsgdetailsDAO">
+    <resultMap type="com.entity.Ordermsgdetails" id="BaseResultMap">
+      <id column="id" property="id" jdbcType="INTEGER"/>
+      <result column="ddno" property="ddno" jdbcType="VARCHAR"/>
+      <result column="memberid" property="memberid" jdbcType="VARCHAR"/>
+      <result column="productid" property="productid" jdbcType="VARCHAR"/>
+      <result column="num" property="num" jdbcType="INTEGER"/>
+      <result column="status" property="status" jdbcType="VARCHAR"/>
+      <result column="fid" property="fid" jdbcType="VARCHAR"/>
+      <result column="leibie" property="leibie" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <insert id="add" parameterType="Ordermsgdetails">
+      insert into ordermsgdetails values(null,#{ddno},#{memberid},#{productid},#{num},#{status},#{fid},#{leibie})
+    </insert>
+    
+    <select id="selectAll" parameterType="HashMap" resultMap="BaseResultMap">
+      select * from ordermsgdetails where 1=1
+      <if test="ddno!=null and ddno!=''">
+      and ddno=#{ddno}
+      </if>
+      <if test="memberid!=null and memberid!=''">
+      and memberid=#{memberid}
+      </if>
+      <if test="productid!=null and productid!=''">
+      and productid=#{productid}
+      </if>
+      <if test="status!=null and status!=''">
+      and status=#{status}
+      </if>
+      <if test="fid!=null and fid!=''">
+      and fid=#{fid}
+      </if>
+      <if test="leibie!=null and leibie!=''">
+      and leibie=#{leibie}
+      </if>
+      order by id desc
+    </select>
+    
+    
+    <select id="selectPh" parameterType="HashMap" resultMap="BaseResultMap">
+      select sum(num) as num,productid from ordermsgdetails where 1=1 
+      <if test="fid!=null and fid!=''">
+        and fid=#{fid} group by productid
+      </if>
+    </select>
+    
+    <update id="update" parameterType="Ordermsgdetails">
+      update ordermsgdetails 
+      <set>
+        <if test="status!=null and status!=''">
+          status=#{status}
+        </if>
+      </set>
+      where id=#{id}
+    </update>
+    
+    
+	
+</mapper>
+

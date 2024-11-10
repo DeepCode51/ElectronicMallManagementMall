@@ -1,0 +1,44 @@
+/*内容*/
+/*分类*/
+.content {background: #f5f5f5;padding-top: 20px;padding-bottom: 20px;}
+.content .fenlei {background: #ffffff;border: 1px solid #eeeeee;}
+.content .fenlei .left {width: 50px;height: 44px;line-height: 44px;font-size: 14px;padding-left: 20px;float: left;color: #888888}
+.content .fenlei .right {float: left;width: 1000px;}
+.content .fenlei .right ul li {height: 44px;line-height: 44px;margin: 0 10px;float: left;}
+.content .fenlei .right ul li a {font-size: 14px;color: #888888}
+
+/*位置*/
+.place {height: 44px;border: 1px solid #eeeeee;background: #ffffff;padding-left: 20px;width: 1060px;margin:20px auto 0 auto;font-size: 14px;line-height: 44px;color: #656762;position: relative}
+.place .check {font-size: 13px;font-weight: bold;color: #6a6667;margin: 0 20px;}
+.place .number {color: #fd5401;font-size: 13px;font-weight: bold;margin: 0 5px;}
+.place .biaoqian {border: 1px solid #dddddd;cursor: pointer;text-decoration: none;width: 57px;height: 25px;line-height: 25px;text-align: center;}
+.place .biaoqian:hover {background: #ff5500;color: #ffffff;border: 1px solid #ff5500}
+.place .pa1 {position: absolute;right: 170px;top: 10px;}
+.place .pa2 {position: absolute;right: 100px;top: 10px;}
+.place .pa3 {position: absolute;right: 30px;top: 10px;}
+
+
+/*产品*/
+.product {margin:20px auto 0 auto;width: 1100px;}
+.product ul li {float: left;width: 233px;height: 308px;background: #ffffff;margin: 0 10px;padding: 20px 10px 0 10px;border: 1px solid #eeeeee;margin-bottom: 20px;}
+.product ul li .pic {margin-bottom: 20px;width: 230px;height: 220px;text-align: center;}
+.product ul li img  {width: 230px;}
+.product ul li .one {height: 18px;overflow: hidden;margin-bottom: 10px;}
+.product ul li .one a {color: #666666;}
+.product ul li .real {color: #fe5500;font-size: 20px;margin-right: 20px;}
+.product ul li .wrong {text-decoration: line-through;color: #888888;}
+
+
+/*分页*/
+.page {text-align: center;height: 40px;line-height: 40px;}
+.page a {padding: 5px 10px;border: 1px solid #dddddd;background: #ffffff;text-decoration: none;margin-right: 5px;}
+.page a:hover {color: #ffffff;background: #fe5500;border: 1px solid #fe5500;}
+
+
+
+
+
+
+
+
+

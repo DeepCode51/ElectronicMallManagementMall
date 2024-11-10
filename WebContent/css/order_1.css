@@ -1,0 +1,45 @@
+/*内容*/
+.my_order1 {height: 68px;border: 1px solid #dddddd;margin-top: 25px;background: #f7f7f7;}
+.my_order1 h1 {font-size: 20px;float: left;line-height: 68px;margin-left: 20px;font-weight: normal}
+.my_order1 .place {float: right;position: relative;margin-right: 30px;}
+.my_order1 .place ul li {float: left;text-align: center;width: 100px;margin-top: 10px;position: relative;z-index: 100}
+.my_order1 .place ul li span {display: block;width: 23px;height: 23px;line-height: 23px;text-align: center;background: #7f7f7f;color: #ffffff;border-radius: 23px;font-size: 16px;margin-left: 38.5px;}
+.my_order1 .place ul li p {font-size: 15px;margin-top: 5px;}
+.my_order1 .place ul .current span {background: #ff5500;}
+.my_order1 .place ul .current p {color: #ff5500}
+.my_order1 .place .heng {height: 4px;background: #ff5500;position: absolute;width: 200px;left: 60px;top: 20px;}
+
+/*提交订单*/
+.finish {margin-top: 44px;border: 1px solid #f9dec5;padding: 25px 20px;background: #fffbe8;}
+.finish .rr {height: 60px;padding-left: 50px;background: url(../image/ok.jpg) no-repeat;background-position: 1% 50%;line-height: 60px;border-bottom: 1px solid #f9dec5}
+.finish .rr .one {font-size: 20px;}
+.finish .rr .two {margin-left: 20px;font-size: 14px;}
+.finish .rr .two font {color: #ff5500;font-weight: bold;font-size: 20px;margin-left: 10px;}
+
+.finish .dd {padding-top: 15px;position: relative}
+.finish .dd p {margin-top: 10px;}
+.finish .dd a {position: absolute;right: 0;top: 25px;}
+
+/*支付信息*/
+.pay {margin-top: 50px;margin-bottom: 40px;}
+.pay .roo {height: 35px;font-size: 18px;font-weight: normal;line-height: 35px;padding-left: 20px;position: relative;}
+.pay .roo span {width: 4px;height: 100%;background: #ff5500;display: block;position: absolute;left: 0;top: 0;border-radius: 5px;}
+
+.pay .kk {margin-top: 20px;border: 1px solid #e2e2e2;padding: 0 25px;position: relative}
+.pay .kk .tt {height: 58px;border-bottom: 1px solid #e2e2e2;line-height: 58px;font-size: 15px;}
+.pay .kk .tt span {color: #ff5500;font-size: 20px;font-weight: bold;}
+.pay .kk .tt a {color: #888888;position: absolute;right: 20px;}
+
+.pay .pp {padding-top: 20px;}
+.pay .pp input {width: 185px;height: 40px;border: none;cursor: pointer;background: #ff5500;color: #ffffff;font-size: 16px;font-weight: bold;display: block;margin: 20px 0;}
+
+
+
+
+
+
+
+
+
+
+

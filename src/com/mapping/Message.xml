@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.MessageDAO">
+    <resultMap type="com.entity.Message" id="BaseResultMap">
+      <id column="id" property="id" jdbcType="INTEGER"/>
+      <result column="memberid" property="memberid" jdbcType="INTEGER"/>
+      <result column="content" property="content" jdbcType="VARCHAR"/>
+      <result column="savetime" property="savetime" jdbcType="VARCHAR"/>
+      <result column="replycontent" property="replycontent" jdbcType="VARCHAR"/>
+      <result column="replysavetime" property="replysavetime" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <insert id="add" parameterType="Message">
+      insert into message values(null,#{memberid},#{content},#{savetime},'','')
+    </insert>
+    
+    <select id="selectAll" resultMap="BaseResultMap">
+      select * from message where 1=1 
+      <if test="key!=null and key!=''">
+        and memberid in (select id from member where uname like "%"#{key}"%")
+      </if>
+      order by id desc
+    </select>
+    
+    <select id="searchMessage" parameterType="String" resultMap="BaseResultMap">
+      select * from message where 1=1 and memberid in (select id from member where uname like "%"#{0}"%")
+    </select>
+    
+    <update id="update" parameterType="Message">
+      update message set replycontent=#{replycontent},replysavetime=now() where id=#{id}
+    </update>
+    
+    <delete id="delete" parameterType="Int">
+      delete from message where id=#{id}
+    </delete>
+    
+	
+</mapper>
+

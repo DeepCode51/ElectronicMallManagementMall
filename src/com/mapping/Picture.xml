@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.PictureDAO">
+    <resultMap type="com.entity.Picture" id="BaseResultMap">
+      <id column="id" property="id" jdbcType="INTEGER"/>
+      <result column="filename" property="filename" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <select id="selectAll" resultMap="BaseResultMap">
+      select * from picture where 1=1  order by id desc
+    </select>
+    
+    <insert id="add" parameterType="picture">
+      insert into picture values(null,#{filename})
+    </insert>
+    
+    <select id="findById" parameterType="int" resultType="Picture">
+      select * from picture where id=#{id}
+    </select>
+    
+    <update id="update" parameterType="Picture">
+      update picture set filename=#{filename} where id=#{id}    
+    </update>
+    
+    <delete id="delete" parameterType="int">
+      delete from picture where id=#{id}
+    </delete>
+    
+    
+    
+	
+</mapper>
+

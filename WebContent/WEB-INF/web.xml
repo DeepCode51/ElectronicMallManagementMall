@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	
+	<welcome-file-list>
+	  <welcome-file>welcome.jsp</welcome-file>
+	</welcome-file-list>
+	<display-name></display-name>
+	<!-- 解决中文乱码 -->
+	<filter>
+		<filter-name>encoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>urlFilter</filter-name>
+		<filter-class>
+			com.util.UrlFilter
+		</filter-class>
+		
+		
+		<init-param>
+        <param-name>logonStrings</param-name><!-- 对页面不进行过滤 -->
+        <param-value>
+        login.jsp;Login.do;upload.jsp;upload_re.jsp;upload_json.jsp;file_manager_json.jsp;index.jsp;index.do;Register.do;Login.do;Search.do;checkUname.do;productLb;skipReg.do;skipLogin.do;productDetails.do;choujiang.do;login.do;newsLb.do;newsShow.do;addFav.do;fubiLb.do;fubix.do;addOrder.do;shopGoods.do;skipshopRetist.do;shopRegister.do;checkUsername.do;
+        </param-value>
+    	</init-param>
+    	
+    	<init-param>
+        <param-name>includeStrings</param-name><!-- 仅仅对指定过滤參数后缀进行过滤 -->
+        <param-value>
+        .action;.jsp;.css;.gif
+        </param-value>
+    	</init-param>
+    	
+    	<init-param>
+        <param-name>redirectPath</param-name><!-- 未通过跳转到登录界面 -->
+        <param-value>/admin/login.jsp</param-value>
+    	</init-param>
+    	
+    	
+    	
+	</filter>
+	<filter-mapping>
+		<filter-name>urlFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+
+
+	<!-- springmvc的核心控制器 :初始时将到Web-INF下解析springmvc配置文件 -->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>dwr-invoker</servlet-name>
+		<servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>activeReverseAjaxEnabled</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>initApplicationScopeCreatorsAtStartup</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>maxWaitAfterWrite</param-name>
+			<param-value>500</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
